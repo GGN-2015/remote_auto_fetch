@@ -44,11 +44,13 @@ def download_file(url: str, save_path: str) -> bool:
         return True
     
     except (URLError, HTTPError, OSError, TimeoutError) as e:
-        # Clean up temporary file if download fails
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
         print(f"\033[1;31mdownload failed\033[0m: {e}")
         return False
+    
+    finally:
+        # Clean up temporary file
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
 def remote_auto_fetch(url: str, save_path:str, md5_hash:Optional[str]=None, max_try:int=5):
     file_dir = os.path.dirname(os.path.abspath(save_path))

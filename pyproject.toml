@@ -1,6 +1,6 @@
 [project]
 name = "remote-auto-fetch"
-version = "0.1.2"
+version = "0.1.3"
 description = "Fetch something from url if not exists."
 authors = [
     {name = "GGN_2015",email = "premierbob@qq.com"}
