@@ -2,8 +2,8 @@ import os
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
 from typing import Optional
-from .file_md5 import file_md5
 import math
+from .file_md5 import file_md5
 
 def download_file(url: str, save_path: str) -> bool:
 
