@@ -152,7 +152,7 @@ def download_file(url: str, save_path: str, n_threads: int = 16) -> bool:
         elapsed_total = time.time() - start_time
         elapsed_str = format_seconds(elapsed_total)
         print("\r{ ' ' * 60 }\r", end="", flush=True)
-        print(f"\r\033[1;34mdownloading\033[0m: 100% ({elapsed_str})", flush=True)
+        print("\r" + (" " * 60) +  "\r" + f"\033[1;34mdownloading\033[0m: 100% ({elapsed_str})", flush=True)
         return True
 
     except (URLError, HTTPError, OSError, TimeoutError) as e:
